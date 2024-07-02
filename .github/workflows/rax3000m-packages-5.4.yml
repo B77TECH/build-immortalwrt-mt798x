@@ -18,6 +18,7 @@ env:
   DEVICE: rax3000m
   UPLOAD_OUTPUT: true
   HASHVER: 13e3b2bf220eaa8724116d12b625d5ca
+  COMMIT: a8938ee909eef5e980f1cf4ab08fc9e528e90847
 
 jobs:
    build:
@@ -49,6 +50,8 @@ jobs:
       run: |
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
+        cd openwrt
+        git checkout ${{ env.COMMIT }}
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
 
