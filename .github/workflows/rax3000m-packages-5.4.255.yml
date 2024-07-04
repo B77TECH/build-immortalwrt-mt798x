@@ -93,7 +93,7 @@ jobs:
     - name: 发布固件至 Release
       uses: ncipollo/release-action@v1
       with:
-        tag: "${{ env.DEVICE }}--${{ env.FILE_DATE }}"
+        tag: "${{ env.DEVICE }}--${{ env.FILE_DATE }}--k5.4.255"
         artifacts: "openwrt/bin/targets/*/*/*"
         body: |
           Packages
