@@ -18,6 +18,7 @@ env:
   DEVICE: xr30
   UPLOAD_OUTPUT: true
   HASHVER: 07e5547fd66bc08f32699beb66ce947e
+  COMMIT: 0c5aa0682435c81813625857127f60e2331af0d3
 
 jobs:
    build:
@@ -49,6 +50,8 @@ jobs:
       run: |
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
+        cd openwrt
+        git checkout ${{ env.COMMIT }}
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
 
