@@ -10,8 +10,8 @@ on:
         default: 'false'
         
 env:
-  REPO_URL: https://github.com/yho2ds/immortalwrt-tr3000-112m
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
+  REPO_BRANCH: openwrt-23.05
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
   TZ: Asia/Shanghai
